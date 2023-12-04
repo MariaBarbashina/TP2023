@@ -17,6 +17,7 @@ public class RosterService {
     }
 
     public List<Roster> getAll() {
-        return repository.list();
+        List<Roster> list = repository.list();
+        return list;
     }
 }

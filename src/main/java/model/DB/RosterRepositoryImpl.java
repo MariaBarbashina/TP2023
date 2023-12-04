@@ -22,7 +22,7 @@ public class RosterRepositoryImpl implements RosterRepository {
         try (Statement statement =
                      connection.createStatement()) {
             ResultSet resultSet =
-                    statement.executeQuery("select * from boxes.boxes where id = " + id);
+                    statement.executeQuery("select * from rosters.rosters where id = " + id);
             List<Roster> rosters = new ArrayList<>();
             while (resultSet.next()) {
                 long uid = resultSet.getLong("id");
@@ -41,7 +41,7 @@ public class RosterRepositoryImpl implements RosterRepository {
         try (Statement statement =
                      connection.createStatement()) {
             ResultSet resultSet =
-                    statement.executeQuery("select * from boxes.boxes");
+                    statement.executeQuery("select * from rosters.rosters");
             List<Roster> rosters = new ArrayList<>();
             while (resultSet.next()) {
                 long id = resultSet.getLong("id");

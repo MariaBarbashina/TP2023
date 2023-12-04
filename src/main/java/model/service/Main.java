@@ -15,10 +15,9 @@ public class Main {
 
         RosterService service =
                 new RosterService(new RosterRepositoryImpl(manager.getConnection()));
-        service.getAll()
-                .forEach(b -> System.out.println("Id: " + b.getId() + ", title: " + b.getTitle()));
+        for (Roster b : service.getAll()) System.out.println("Id: " + b.getId() + ", title: " + b.getTitle());
         System.out.println("============");
         Roster roster = service.getById(3L);
-        System.out.println("Box by id = 3: " + roster.getId() + " - " + roster.getTitle());
+        System.out.println("Roster by id = 3: " + roster.getId() + " - " + roster.getTitle());
     }
 }
